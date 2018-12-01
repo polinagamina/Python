@@ -1,0 +1,12 @@
+{% extends 'blog/post_list.html' %}
+{% block content %}
+{% for RegRequest in regreq %}
+   <h3><b>Номер заявления {{ RegRequest.id }}</b></h3>
+   <p>Дата: {{ RegRequest.created_date }}</p>
+   <p>ФИО заявителя: {{RegRequest.FIO}}</p>
+  <p>Услуга: {{RegRequest.Service}}</p>
+  <p>Статус: {{RegRequest.State}}</p>
+ 
+   <hr align="left" width="1000" />
+{% endfor %}
+{% endblock %}

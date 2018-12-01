@@ -1,0 +1,11 @@
+{% extends 'blog/post_list.html' %}
+{% block content %}
+{% for Request in req %}
+   <h3><b>Номер заявления {{ Request.id }}</b></h3>
+   <p>ФИО заявителя: {{Request.FIO}}</p>
+  <p>Услуга: {{Request.Service}}</p>
+  <p>Телефон: {{Request.Telephone}}</p>
+ <p>Email: {{Request.Email}}</p>
+   <hr align="left" width="1000" />
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'blog/post_list.html' %}
+{% block content %}
+<h3 style="text-align: center">Новая заявка</h3>
+    <form method="POST" class="post-form" style="text-align: center">{% csrf_token %}
+   <p>Номер заявления:</p>
+     <p>{{ Request.id }}</p>
+   <p>ФИО заявителя:</p>
+     <p>{{Request.FIO}}</p>
+  <p>Услуга:</p>
+  <p>   {{Request.Service}}</p>
+  <p>Телефон:</p>
+    <p>{{Request.Telephone}}</p>
+ <p>Email:</p>
+    <p>{{Request.Email}}</p>
+    <button type="submit" class="save btn btn-default">Сохранить</button>
+       </form>
+{% endblock %}

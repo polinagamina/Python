@@ -1,0 +1,13 @@
+{% extends 'blog/post_list.html' %}
+{% if user.is_authenticated %}
+     <a class="btn btn-default" href="{% url 'Agreement_edit' pk=Agreement.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endif %}
+{% block content %}
+   <h3><b>Номер договора {{ Agreement.id }}</b></h3>
+   <p>ФИО заявителя: {{Agreement.FIO}}</p>
+  <p>Услуга: {{Agreement.Service}}</p>
+  <p>Форма оплаты: {{Agreement.Price}}</p>
+  <p>Вид: {{Agreement.Kind}}</p>
+  <p>Тип: {{Agreement.Type}}</p>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'blog/post_list.html' %}
+{% block content %}
+{% for Agreement in agr %}
+   <h3><b>Номер договора {{ Agreement.id }}</b></h3>
+   <p>ФИО заявителя: {{Agreement.FIO}}</p>
+  <p>Услуга: {{Agreement.Service}}</p>
+  <p>Форма оплаты: {{Agreement.Price}}</p>
+  <p>Вид: {{Agreement.Kind}}</p>
+  <p>Тип: {{Agreement.Type}}</p>
+   <hr align="left" width="1000" />
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'blog/post_list.html' %}
+{% if user.is_authenticated %}
+     <a class="btn btn-default" href="{% url 'RegRequest_edit' pk=RegRequest.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endif %}
+{% block content %}
+   <h3><b>Номер заявления: {{ RegRequest.id }}</b></h3>
+   <p>Дата: {{ RegRequest.created_date }}</p>
+   <p>ФИО заявителя: {{RegRequest.FIO}}</p>
+  <p>Услуга: {{RegRequest.Service}}</p>
+  <p>Статус: {{RegRequest.State}}</p>
+
+
+{% endblock %}

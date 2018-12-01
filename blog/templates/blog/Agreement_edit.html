@@ -1,0 +1,19 @@
+{% extends 'blog/post_list.html' %}
+{% block content %}
+<h3 style="text-align: center">Новый договор</h3>
+  <form method="POST" class="post-form" style="text-align: center">{% csrf_token %}
+   <p>Номер договора:</p>
+  <p>{{ Agreement.id }}</p>
+   <p>ФИО заявителя: </p>
+  <p>{{Agreement.FIO}}</p>
+  <p>Услуга: </p>
+  <p>{{Agreement.Service}}</p>
+  <p>Форма оплаты:</p>
+  <p>{{Agreement.Price}}</p>
+  <p>Вид:</p>
+  <p> {{Agreement.Kind}}</p>
+  <p>Тип: </p>
+  <p>{{Agreement.Type}}</p>
+  <button type="submit" class="save btn btn-default">Сохранить</button>
+      </form>
+{% endblock %}

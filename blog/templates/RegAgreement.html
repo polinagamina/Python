@@ -1,0 +1,12 @@
+{% extends 'blog/post_list.html' %}
+{% block content %}
+{% for RegAgreement in regagr %}
+   <h3><b>Номер договора: {{ RegAgreement.id }}</b></h3>
+   <p>ФИО заявителя: {{RegAgreement.FIO}}</p>
+  <p>Ответственный исполнитель: {{RegAgreement.Service}}</p>
+  <p>Вид: {{RegAgreement.Kind}}</p>
+  <p>Тип: {{RegAgreement.Type}}</p>
+  <p>Дата: {{ RegAgreement.created_date }}</p>
+   <hr align="left" width="1000" />
+{% endfor %}
+{% endblock %}
