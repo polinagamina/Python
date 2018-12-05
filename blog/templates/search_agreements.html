@@ -45,10 +45,25 @@
      <h4 style="text-align: center">Возможные действия:</h4>
      {% if user.is_authenticated %}
      <p style="text-align: center"><a href="http://127.0.0.1:8000/Request/new/"><button>Добавить заявку</button></a>
-     <a href="http://127.0.0.1:8000/Agreement/new/"><button>Добавить договор</button></a>
-    <a href="http://127.0.0.1:8000/search/"><button>Поиск</button></p>
+     <a href="http://127.0.0.1:8000/Agreement/new/"><button>Добавить договор</button></a></p>
      {% endif %}
      {% block content %}
 {% endblock %}
+{% if agreements %}
+    <p>Found Agreement:</p>
+    <ul>
+        {% for Agreement in agreements %}
+        <h3><b>Номер договора {{ Agreement.id }}</b></h3>
+        <p>ФИО заявителя: {{Agreement.FIO}}</p>
+       <p>Услуга: {{Agreement.Service}}</p>
+       <p>Форма оплаты: {{Agreement.Price}}</p>
+       <p>Вид: {{Agreement.Kind}}</p>
+       <p>Тип: {{Agreement.Type}}</p>
+
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No agreements matched your search criteria.</p>
+{% endif %}
   </body>
 </html>

@@ -45,10 +45,21 @@
      <h4 style="text-align: center">Возможные действия:</h4>
      {% if user.is_authenticated %}
      <p style="text-align: center"><a href="http://127.0.0.1:8000/Request/new/"><button>Добавить заявку</button></a>
-     <a href="http://127.0.0.1:8000/Agreement/new/"><button>Добавить договор</button></a>
-    <a href="http://127.0.0.1:8000/search/"><button>Поиск</button></p>
+     <a href="http://127.0.0.1:8000/Agreement/new/"><button>Добавить договор</button></a></p>
      {% endif %}
      {% block content %}
 {% endblock %}
+<h4>Поиск заявок</h4>
+ <form action="/search/" method="GET">
+     <p>По номеру</p>
+     <input type="text" name="f">
+     <input type="submit" value="Search">
+ </form><br>
+ <h4>Поиск договоров</h4>
+ <form action="/search/" method="GET">
+     <p>По номеру</p>
+     <input type="text" name="q">
+     <input type="submit" value="Search">
+ </form></td>
   </body>
 </html>

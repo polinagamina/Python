@@ -93,3 +93,22 @@ def Request_edit(request, pk):
     else:
         form = RequestForm(instance=req)
     return render(request, 'blog/Request_edit.html', {'Request': form})
+def search_form(request):
+    return render_to_response('Search_Form.html')
+
+def search(request):
+    if 'f' in request.GET and request.GET['f']:
+        f = request.GET['f']
+        requests = Request.objects.filter(id__icontains=f)
+        return render_to_response('search_requests.html',
+            {'requests': requests, 'query': f})
+    else:
+        return render_to_response('Search_Form.html', {'error': True})
+
+    if 'q' in request.GET and request.GET['q']:
+        q = request.GET['q']
+        Agreement = Agreement.objects.filter(id__icontains=q)
+        return render_to_response('search_agr.html',
+            {'replies': agreement, 'query': q})
+    else:
+        return render_to_response('Search_Form.html', {'error': True})

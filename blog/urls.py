@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^Agreement/(?P<pk>\d+)/edit/$', views.Agreement_edit, name='Agreement_edit'),
     url(r'^Request/new/$', views.Request_new, name='Request_new'),
     url(r'^Request/(?P<pk>\d+)/edit/$', views.Request_edit, name='Request_edit'),
+    url(r'^search/$', views.search, name='search'),
+    url(r'^search_form/$', views.search_form, name='search_form'),
 ]
